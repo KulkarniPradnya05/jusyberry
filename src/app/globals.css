@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050505;
+}
+
+/* Explicit Hero Card Animations avoiding Tailwind JIT stripping bugs */
+@keyframes fadeInCard {
+  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-card-1 {
+  animation: fadeInCard 1s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both, floatCard 6s ease-in-out 1.5s infinite;
+}
+.animate-card-2 {
+  animation: fadeInCard 1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both, floatCard 7s ease-in-out 1.8s infinite;
+}
+.animate-card-3 {
+  animation: fadeInCard 1s cubic-bezier(0.16, 1, 0.3, 1) 1.1s both, floatCard 6s ease-in-out 2.1s infinite;
+}
+.animate-card-4 {
+  animation: fadeInCard 1s cubic-bezier(0.16, 1, 0.3, 1) 1.4s both, floatCard 5s ease-in-out 2.4s infinite;
+}
